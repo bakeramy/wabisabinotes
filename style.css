@@ -25,3 +25,11 @@ a {
 header {
   margin-bottom: 60px;
 }
+h1 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+h1 a:hover {
+  text-decoration: underline;
+}
