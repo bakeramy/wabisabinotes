@@ -26,28 +26,26 @@
   <div id="all-posts"></div>
 </main>
 
-<script>
-fetch('posts.json')
-  .then(response => response.json())
-  .then(posts => {
-    const container = document.getElementById('all-posts');
+<main>
+  <h2>Posts</h2>
 
-    posts
-      .sort((a, b) => new Date(b.date) - new Date(a.date))
-      .forEach(post => {
-        const article = document.createElement('article');
+  {% for post in site.posts %}
+    <article>
+      <h3>
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      </h3>
 
-        article.innerHTML = `
-          <h3><a href="${post.url}">${post.title}</a></h3>
-          <p>${post.date}</p>
-          <p>${post.excerpt}</p>
-          <p><a href="${post.url}">Read more →</a></p>
-        `;
+      <p>{{ post.date | date: "%d %B %Y" }}</p>
 
-        container.appendChild(article);
-      });
-  });
-</script>
+      {{ post.excerpt }}
+
+      <p>
+        <a href="{{ post.url | relative_url }}">Read more →</a>
+      </p>
+    </article>
+  {% endfor %}
+
+</main>
 
 </body>
 </html>
