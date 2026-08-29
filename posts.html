@@ -21,10 +21,33 @@
     </nav>
   </header>
 
-  <main>
-    <h2>Posts</h2>
-    <p>All posts, in reverse chronological order.</p>
-  </main>
+<main>
+  <h2>Posts</h2>
+  <div id="all-posts"></div>
+</main>
+
+<script>
+fetch('posts.json')
+  .then(response => response.json())
+  .then(posts => {
+    const container = document.getElementById('all-posts');
+
+    posts
+      .sort((a, b) => new Date(b.date) - new Date(a.date))
+      .forEach(post => {
+        const article = document.createElement('article');
+
+        article.innerHTML = `
+          <h3><a href="${post.url}">${post.title}</a></h3>
+          <p>${post.date}</p>
+          <p>${post.excerpt}</p>
+          <p><a href="${post.url}">Read more →</a></p>
+        `;
+
+        container.appendChild(article);
+      });
+  });
+</script>
 
 </body>
 </html>
