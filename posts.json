@@ -1,6 +1,12 @@
 [
   {
-    "title": "My first post",
+    "title": "My Second Post",
+    "date": "2026-08-30",
+    "excerpt": "This is the second test post.",
+    "url": "posts/second-post.html"
+  },
+  {
+    "title": "My First Post",
     "date": "2026-08-29",
     "excerpt": "This is a test post for Wabi Sabi Notes.",
     "url": "posts/first-post.html"
