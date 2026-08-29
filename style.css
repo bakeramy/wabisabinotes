@@ -32,6 +32,7 @@ header {
 header p {
   margin: 0;
   color: #666;
+  font-style: italic;
   font-size: 1rem;
 }
 
