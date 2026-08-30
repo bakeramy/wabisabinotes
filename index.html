@@ -35,7 +35,9 @@
 
       <p>{{ item.date | date: "%d %B %Y" }}</p>
 
-      {{ item.excerpt }}
+    {% if item.excerpt %}
+  <p>{{ item.excerpt }}</p>
+{% endif %}
 
       <p>
         <a href="{{ item.url | relative_url }}">Read more →</a>
