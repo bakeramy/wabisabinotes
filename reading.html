@@ -22,10 +22,15 @@
 </nav>
   </header>
 
-  <main>
-    <h2>Reading</h2>
-    <p>2026</p>
-  </main>
+<main>
+  <h2>Reading</h2>
+
+  {% for item in site.reading %}
+    <p>
+      <a href="{{ item.url }}">{{ item.title }}</a>
+    </p>
+  {% endfor %}
+</main>
 
 </body>
 </html>
