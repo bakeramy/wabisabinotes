@@ -21,20 +21,24 @@
   <a href="about.html">About</a>
 </nav>
 </header>
+
 <section id="latest-posts">
 
-  {% for post in site.posts limit:5 %}
+  {% assign all_items = site.posts | concat: site.reading | concat: site.projects %}
+  {% assign all_items = all_items | sort: "date" | reverse %}
+
+  {% for item in all_items limit:5 %}
     <article>
       <h3>
-        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        <a href="{{ item.url | relative_url }}">{{ item.title }}</a>
       </h3>
 
-      <p>{{ post.date | date: "%d %B %Y" }}</p>
+      <p>{{ item.date | date: "%d %B %Y" }}</p>
 
-      {{ post.excerpt }}
+      {{ item.excerpt }}
 
       <p>
-        <a href="{{ post.url | relative_url }}">Read more →</a>
+        <a href="{{ item.url | relative_url }}">Read more →</a>
       </p>
     </article>
   {% endfor %}
