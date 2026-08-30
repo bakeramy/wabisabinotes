@@ -2,6 +2,7 @@
 layout: post
 title: Western Sahara
 date: 2026-08-30
+excerpt: The most sparsely populated country in Africa with only 600k inhabitants.
 ---
 
 - **Capital:**
