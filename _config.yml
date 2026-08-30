@@ -2,3 +2,11 @@ title: wabi sabi notes
 description: an online reading journal
 url: ""
 baseurl: ""
+
+collections:
+  reading:
+    output: true
+    permalink: /reading/:name/
+  projects:
+    output: true
+    permalink: /projects/:name/
