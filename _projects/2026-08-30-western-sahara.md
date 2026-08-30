@@ -3,6 +3,7 @@ layout: post
 title: Western Sahara
 date: 2026-08-30
 ---
+THIS IS A PROJECT TEST
 
 Capital:
 Population: Approx 600k!
