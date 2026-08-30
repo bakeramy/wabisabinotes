@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Test Reading
 date: 2026-08-30
 ---
