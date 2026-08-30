@@ -1,4 +1,5 @@
 ---
+layout: post
 title: Wasteland — Notes
 book: Wasteland
 author: Claire Vaye Watkins
