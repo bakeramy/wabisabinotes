@@ -35,11 +35,19 @@
     {% for book in site.data.books %}
       {% if book.year == year %}
         <p>
-          <strong>{{ book.title }}</strong> — {{ book.author }}
+          {% if book.notes %}
+            <a href="{{ '/notes/' | append: book.notes | append: '/' | relative_url }}">
+              <strong>{{ book.title }}</strong>
+            </a>
+          {% else %}
+            <strong>{{ book.title }}</strong>
+          {% endif %}
+          — {{ book.author }}
         </p>
       {% endif %}
     {% endfor %}
 
   {% endfor %}
 </main>
+</body>
 </html>
