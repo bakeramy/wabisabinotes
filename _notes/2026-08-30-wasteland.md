@@ -1,8 +1,6 @@
 ---
 layout: post
-title: Wasteland — Notes
-book: Wasteland
-author: Claire Vaye Watkins
+title: Wasteland
 date: 2026-08-30
 ---
 
