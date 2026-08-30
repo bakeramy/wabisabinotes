@@ -27,14 +27,6 @@
 <main>
   <h2>Reading</h2>
 
-  <p>Notes collection test:</p>
-
-  {% for note in site.notes %}
-    <p>
-      {{ note.title }} — {{ note.url }}
-    </p>
-  {% endfor %}
-
   {% assign years = site.data.books | map: "year" | uniq | sort | reverse %}
 
   {% for year in years %}
@@ -42,9 +34,32 @@
 
     {% for book in site.data.books %}
       {% if book.year == year %}
+
         <p>
-          <strong>{{ book.title }}</strong> — {{ book.author }}
+          {% if book.notes %}
+            {% assign note_path = '/notes/' | append: book.notes | append: '/' %}
+
+            {% for note in site.notes %}
+              {% if note.url contains book.notes %}
+                <a href="{{ note.url | relative_url }}">
+                  <strong>{{ book.title }}</strong>
+                </a>
+              {% endif %}
+            {% endfor %}
+
+            {% if note_path %}
+              {% unless site.notes %}
+                <strong>{{ book.title }}</strong>
+              {% endunless %}
+            {% endif %}
+
+          {% else %}
+            <strong>{{ book.title }}</strong>
+          {% endif %}
+
+          — {{ book.author }}
         </p>
+
       {% endif %}
     {% endfor %}
 
