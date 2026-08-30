@@ -37,22 +37,14 @@
 
         <p>
           {% if book.notes %}
-            {% assign note_path = '/notes/' | append: book.notes | append: '/' %}
-
             {% for note in site.notes %}
-              {% if note.url contains book.notes %}
+              {% assign note_filename = note.path | split: "/" | last %}
+              {% if note_filename contains book.notes %}
                 <a href="{{ note.url | relative_url }}">
                   <strong>{{ book.title }}</strong>
                 </a>
               {% endif %}
             {% endfor %}
-
-            {% if note_path %}
-              {% unless site.notes %}
-                <strong>{{ book.title }}</strong>
-              {% endunless %}
-            {% endif %}
-
           {% else %}
             <strong>{{ book.title }}</strong>
           {% endif %}
