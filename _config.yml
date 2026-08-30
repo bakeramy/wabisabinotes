@@ -7,6 +7,11 @@ collections:
   reading:
     output: true
     permalink: /reading/:name/
+
+  notes:
+    output: true
+    permalink: /notes/:name/
+
   projects:
     output: true
     permalink: /projects/:name/
