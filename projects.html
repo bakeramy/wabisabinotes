@@ -24,10 +24,15 @@
 </nav>
   </header>
 
-  <main>
-    <h2>Projects</h2>
-    <p>What I'm working on</p>
-  </main>
+<main>
+  <h2>Projects</h2>
+
+  {% for item in site.projects %}
+    <p>
+      <a href="{{ item.url }}">{{ item.title }}</a>
+    </p>
+  {% endfor %}
+</main>
 
 </body>
 </html>
